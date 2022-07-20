@@ -18,7 +18,7 @@ Teas.init(
             allowNull: false,
         },
 
-        benifits: {
+        benefits: {
             type: DataTypes.STRING,
             allowNull: false,
         }

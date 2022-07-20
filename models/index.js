@@ -1,7 +1,7 @@
 // import models
 const Affirmations = require("./Affirmations");
 const Quotes = require('./Quotes');
-//const Teas = require('./Teas')
+const Teas = require('./Teas')
 //const Mood = require('./Mood');
 
 
@@ -12,6 +12,6 @@ const Quotes = require('./Quotes');
 module.exports = {
   Affirmations,
   Quotes,
-  //Teas
+  Teas
   //Mood
 };
