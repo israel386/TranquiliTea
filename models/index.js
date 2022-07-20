@@ -2,7 +2,6 @@
 const Affirmations = require("./Affirmations");
 const Quotes = require('./Quotes');
 const Teas = require('./Teas')
-//const Mood = require('./Mood');
 
 
 //Affirmations belong to mood
@@ -12,6 +11,5 @@ const Teas = require('./Teas')
 module.exports = {
   Affirmations,
   Quotes,
-  Teas
-  //Mood
+  Teas,
 };

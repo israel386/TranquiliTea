@@ -19,8 +19,9 @@ Affirmations.init(
         },
 
         mood: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: 10,
         }
     }, 
     {
