@@ -15,19 +15,19 @@ An api that uses mysql2 and sequelize to create a generator of positive quotes, 
 
 - [ ] Create Models for each category: 
     - [x] Affirmations 
-    - [ ] Quotes 
+    - [x] Quotes 
     - [ ] Tea 
     - [ ] Mood 
 
 - [ ] Create Routes for each category: 
     - [x] Affirmations 
-    - [ ] Quotes 
+    - [x] Quotes 
     - [ ] Tea 
     - [ ] Mood 
 
 - [ ] Create Seeds for each category: 
-    - [ ] Affirmations 
-    - [ ] Quotes 
+    - [x] Affirmations 
+    - [x] Quotes 
     - [ ] Tea 
     - [ ] Mood
 
