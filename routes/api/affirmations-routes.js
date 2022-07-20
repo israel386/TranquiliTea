@@ -41,7 +41,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   // create a new Affirmations
   Affirmations.create({
-    Affirmations_name: req.body.Affirmations_phrase,
+    affirmation_phrase: req.body.affirmation_phrase,
   })
     .then((AffirmationsData) => res.json(AffirmationsData))
     .catch((err) => {
