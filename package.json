@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/charlottearichard/restful.api#readme",
   "dependencies": {
+    "@picocss/pico": "^1.5.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mysql2": "^2.3.3",
