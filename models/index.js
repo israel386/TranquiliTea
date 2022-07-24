@@ -1,8 +1,10 @@
 // import models
 const Affirmations = require("./Affirmations");
-//const Quotes = require('./Quotes');
+const Quotes = require('./Quotes');
+const Teas = require('./Teas');
+const User = require('./User');
 //const Mood = require('./Mood');
-//const Tea = require('./Tea')
+
 
 //Affirmations belong to mood
 
@@ -10,7 +12,8 @@ const Affirmations = require("./Affirmations");
 
 module.exports = {
   Affirmations,
+  Quotes,
+  Teas,
+  User
   //Mood
-  //Quotes
-  //Tea
 };
