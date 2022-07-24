@@ -13,29 +13,26 @@ An api that uses mysql2 and sequelize to create a generator of positive quotes, 
 ## Tasks 
 - [x] Set up project with necessary packages 
 
-- [ ] Create Models for each category: 
+- [x] Create Models for each category: 
     - [x] Affirmations 
     - [x] Quotes 
-    - [ ] Tea 
-    - [ ] Mood 
+    - [x] Tea 
 
-- [ ] Create Routes for each category: 
+- [x] Create Routes for each category: 
     - [x] Affirmations 
     - [x] Quotes 
-    - [ ] Tea 
-    - [ ] Mood 
+    - [x] Tea 
 
-- [ ] Create Seeds for each category: 
+- [x] Create Seeds for each category: 
     - [x] Affirmations 
     - [x] Quotes 
-    - [ ] Tea 
-    - [ ] Mood
+    - [x] Tea 
+    - [x] Mood
 
-- [ ] Have mood be affiliated with each category. 
-
+- [x] Have mood be affiliated with quotes and affirmations. 
 
 
 
 ## Notes
 
-- Organize affirmations and quotes with id numbers. So "happy" mood will be 1-10 and so on. 
+- Organize affirmations and quotes with numbers to correspond with radio scale (1-4 number system). 
