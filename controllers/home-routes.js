@@ -1,21 +1,20 @@
 const router = require('express').Router();
-const { Model } = require('sequelize/types');
-const sequelioze = require('../config/connection');
+const sequelize = require('../config/connection');
 
+// get all posts for homepage
 router.get('/', (req, res) => {
 
-    res.render('homepage'
-    );
-});
+  res.render('homepage'
+  );
+})
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
 
-    }
-
-    res.render('login');
+  res.render('login');
 });
 
 module.exports = router;
