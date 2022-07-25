@@ -4,14 +4,31 @@
   --secondary-color: red;
   --tertiary-color: #39a6b2;
 }
-*{
-background-color: #1ed9f2;
+body {
+background-image: linear-gradient(rgb(20, 202, 202), azure);
+background-repeat: no-repeat;
+    height: 100%;
+    margin: 0%;
+    background-attachment: fixed;
 }
 
 .radio-wrapper input {
-    opacity: 0;
+    opacity: 10;
 }
 
+.mood {
+    max-height: 10%;
+    max-width: 10%
+}
+
+.mood:hover{
+    max-height: 15%;
+    max-width: 15%;
+}
+
+.mood:checked{
+    outline: 5px solid hotpink;
+}
 /* 
 .radio-wrapper label {
     position: relative;
