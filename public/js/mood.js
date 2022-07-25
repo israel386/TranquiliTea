@@ -1,11 +1,11 @@
 function togglesize()
 {
     var size;
-    if (document.getElementById("small").checked)
+    if (document.getElementsByClassName("mood").checked)
     {
         size = "15%";
     }
-    else if (document.getElementById("medium").checked)
+    else if (document.getElementsByClassName("mood").checked)
     {
         size = "17%";
     }
