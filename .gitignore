@@ -1,5 +1,6 @@
 node_modules/
 <<<<<<< HEAD
+<<<<<<< HEAD
 jspm_packages/
 .prettierignore
 
@@ -66,5 +67,7 @@ dist
 .tern-port
 
 .DS_Store
-.env
+=======
+.DS_Store 
 >>>>>>> israel
+.env
