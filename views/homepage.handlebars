@@ -1,1 +1,45 @@
 <div> You are on the homepage </div>
+
+<ol class="affirmation-box">
+  {{#each affirmations as |affirmation|}}
+  <li>
+    <article class="affirmations">
+      <!-- affirmation --> 
+      <div class="title">
+       {{affirmation_phrase}}  
+        
+      </div>
+      
+    </article>
+  </li>
+  {{/each}}
+</ol>
+
+
+<ol class="quote-box">
+  {{#each quotes}}
+  <li>
+    <article class="quotes">
+      <!-- affirmation --> 
+      <div class="title">
+       {{quote}} - by {{by}}
+      </div>
+      
+    </article>
+  </li>
+  {{/each}}
+</ol>
+
+<ol class="teas-box">
+  {{#each teas}}
+  <li>
+    <article class="teas">
+      <!-- affirmation --> 
+      <div class="title">
+       {{teas}} - benefits {{benefits}}
+      </div>
+      
+    </article>
+  </li>
+  {{/each}}
+</ol>

@@ -20,13 +20,11 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "quote"],
+    attributes: ["id", "quote", "by"],
   })
     .then((quotesData) => {
       if (!quotesData) {
-        res
-          .status(404)
-          .json({ message: "No quotes found with this mood" });
+        res.status(404).json({ message: "No quotes found with this mood" });
         return;
       }
       res.json(QuotesData);
