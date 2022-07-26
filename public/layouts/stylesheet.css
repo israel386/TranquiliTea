@@ -1,4 +1,81 @@
-body {
+
+.content
+{
+ background-image: linear-gradient(rgba(255, 255, 255, 0.931) rgb(0, 255, 251));
+}
+
+.radio-toolbar
+{
+  background-color:white;
+  width:30vw;
+  padding:50px 30px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  justify-content:space-evenly;
+}
+
+.radio-toolbar label
+{
+  font-size:1.2em;
+}
+
+
+
+
+.radio-toolbar {
+    margin: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-grow: 2;
+  }
+  
+
+
+
+  .radio-toolbar input[type="radio"] {
+    visibility: hidden;
+    display: none;
+  }
+
+
+  
+  .radio-toolbar label {
+      display: inline-block;
+      background-color: white;
+      padding: 10px 20px;
+      font-family: sans-serif, Arial;
+      font-size: 16px;
+      border: 2px solid rgb(235, 119, 98);
+      border-radius: 5px;
+      cursor: pointer;
+      max-width: 50%;
+      max-height: 50%;
+  }
+  
+  .radio-toolbar label:hover {
+    background-color:rgb(90, 244, 193);
+    color:white;
+    max-width: 55%;
+    max-height: 55%;
+  }
+  
+  .radio-toolbar input[type="radio"]:focus + label {
+      border: 2px dashed rgb(98, 233, 235);
+      max-width: 60%;
+      max-height: 60%;
+  }
+  
+  .radio-toolbar input[type="radio"]:checked + label {
+      background-color:rgb(83, 238, 228);
+      color:white;
+        border:2px dashed white;
+        max-width: 60%;
+      max-height: 60%;
+  }
+  /* body {
 background-image: linear-gradient(rgb(20, 202, 202), azure);
 background-repeat: no-repeat;
     height: 100%;
@@ -38,8 +115,8 @@ filter: saturate(0);
 
 [type=radio]:checked + img {
  filter: saturate(100);
-}
-
+} */
+/* **************************************************** */
 /* 
 .radio-wrapper label {
     position: relative;
