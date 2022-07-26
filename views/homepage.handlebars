@@ -1,4 +1,6 @@
+
 <div> You are on the homepage </div>
+
 
 <ol class="affirmation-box">
   {{#each affirmations as |affirmation|}}
@@ -44,9 +46,29 @@
   {{/each}}
 </ol>
 
+
+<div class="entries-box">
+  {{#each entry}} 
+
+    <article class="teas">
+      <!-- entries --> 
+      <div class="title">
+      <h3> {{entry_title}}  </h3> 
+      <p> {{createdAt}} </p>
+      
+     <p> {{entry_text}}  </p> 
+      </div>
+      
+    </article>
+ 
+  {{/each}}
+</div>
+
+
 <form class="comment-form">
   <div>
-    <textarea name="entry-body"></textarea>
+    <textarea name="entry-title"></textarea>
+    <textarea name="entry-text"></textarea>
   </div>
 
   <div>
@@ -70,5 +92,8 @@
   </section>
   {{/each}}
 </div>
+
+ <a href="/entry/{{entry.id}}">{{entry_title}} </a>
+      </div>
 
 <script src="/public/javascript/entry.js"></script>

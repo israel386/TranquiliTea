@@ -1,9 +1,9 @@
 const seedAffirmations = require("./affirmations-seeds");
 const seedQuotes = require("./quotes-seed");
-const seedTeas = require("./teas-seeds")
+const seedTeas = require("./teas-seeds");
+const seedEntries = require("./entry-seeds");
 
 const sequelize = require("../config/connection");
-
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -14,6 +14,8 @@ const seedAll = async () => {
   console.log("\n----- QUOTES SEEDED -----\n");
   await seedTeas();
   console.log("\n----- TEAS SEEDED -----\n");
+  await seedEntries();
+  console.log("\n----- ENTRIES SEEDED -----\n");
 
   process.exit(0);
 };

@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 // connects the models
 //const sequelize = require("../config/connection");
-const { Affirmations, Quotes, Teas } = require("../models");
+const { Affirmations, Quotes, Teas, Entry } = require("../models");
 
 router.get("/", (req, res) => {
   Affirmations.findAll({
@@ -27,10 +27,46 @@ router.get("/", (req, res) => {
           // pass a single post object into the homepage template
           const teas = TeasData.map((teas) => teas.get({ plain: true }));
 
-          console.log(quotes);
-          res.render("homepage", { affirmations, quotes, teas });
+          //entries
+          Entry.findAll({
+            attributes: ["entry_title", "entry_text", "created_at"],
+          }).then((EntriesData) => {
+            // pass a single post object into the homepage template
+            const entry = EntriesData.map((entry) =>
+              entry.get({ plain: true })
+            );
+
+            console.log(quotes);
+            res.render("homepage", { affirmations, quotes, teas, entry });
+          });
         });
       });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//single entry
+router.get("/entry/:id", (req, res) => {
+  Entry.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "entry_title", "entry_text", "created_at"],
+  })
+    .then((EntryData) => {
+      if (!EntryData) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+
+      // serialize the data
+      const entry = EntryData.get({ plain: true });
+
+      // pass data to template
+      res.render("single-entry", { entry });
     })
     .catch((err) => {
       console.log(err);

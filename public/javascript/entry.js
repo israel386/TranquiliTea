@@ -10,7 +10,7 @@ async function entryFormHandler(event) {
   ];
 
   if (entry_text) {
-    const response = await fetch("/api/entries", {
+    const response = await fetch("/api/entry", {
       method: "POST",
       body: JSON.stringify({
         post_id,
