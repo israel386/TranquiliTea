@@ -21,9 +21,15 @@ router.get("/", (req, res) => {
         const quotes = QuotesData.map((quotes) => quotes.get({ plain: true }));
 
         //teas
+        Teas.findAll({
+          attributes: ["tea_type", "benefits"],
+        }).then((TeasData) => {
+          // pass a single post object into the homepage template
+          const teas = TeasData.map((teas) => teas.get({ plain: true }));
 
-        console.log(quotes);
-        res.render("homepage", { affirmations, quotes });
+          console.log(quotes);
+          res.render("homepage", { affirmations, quotes, teas });
+        });
       });
     })
     .catch((err) => {
