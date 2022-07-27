@@ -1,57 +1,128 @@
-:root {
-  --primary-color: #fce138;;
-  /* --secondary-color: #024e76; */
-  --secondary-color: red;
-  --tertiary-color: #39a6b2;
-}
-*{
-background-color: #1ed9f2;
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.radio-wrapper input {
-    opacity: 0;
+main {
+border:25px solid rgb(252, 254, 160);
 }
 
-/* 
-.radio-wrapper label {
-    position: relative;
-    left: 10px;
+section {
+border:25px solid rgb(252, 254, 160);
+}
+
+
+.container {
+    padding: 3%;
+    background-color: rgb(252, 218, 185);
+    opacity: 98%;
+    border-radius: 20%;
+}
+
+body{
+    background-image: url("/icons/teabackground.png");
+    background-size: cover;
+    background-repeat: repeat;
+}
+.brand{
+font-size: xx-large;
+font-family: serif;
+}
+.tagline{
+    display: flex;
+    justify-content: center;
+    color: royalblue
+}
+
+.journal{
+    text-align: center;
+    max-width: 100%;
+    justify-content: center;
+    background-color: rgb(252, 218, 185);
+    
+}
+
+.user-text{
+    background-color: rgb(252, 218, 185) ;
+}
+.user-input{
+    background-color:antiquewhite
+}
+.logo{
+    max-width: 25%;
+    max-height: 25%;
+    border-radius: 50%;
+}
+
+.content
+{
+ background-image: linear-gradient(rgba(255, 255, 255, 0.931) rgb(0, 255, 251));
+}
+
+.radio-toolbar
+{
+  background-color:rgb(252, 218, 185);
+  width:30vw;
+  /* padding:50px 30px; */
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  justify-content:space-evenly;
+}
+
+.radio-toolbar label
+{
+  font-size:1.2em;
+}
+
+.radio-toolbar {
     margin: 10px;
-    line-height: 1.6;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    flex-grow: 2;
+  }
+
+  .radio-toolbar input[type="radio"] {
+    visibility: hidden;
+    display: none;
+  }
+  
+  .radio-toolbar label {
+      display: inline-block;
+      background-color: white;
+      padding: 10px 20px;
+      font-family: sans-serif, Arial;
+      font-size: 16px;
+      border: 2px solid rgb(235, 119, 98);
+      border-radius: 5px;
+      cursor: pointer;
+      max-width: 50%;
+      max-height: 50%;
+  }
+  
+  .radio-toolbar label:hover {
+    background-color:rgb(90, 244, 193);
+    color:white;
+    max-width: 55%;
+    max-height: 55%;
+  }
+  
+  .radio-toolbar input[type="radio"]:focus + label {
+      border: 2px groove rgb(98, 233, 235);
+      max-width: 60%;
+      max-height: 60%;
+  }
+  
+  .radio-toolbar input[type="radio"]:checked + label {
+      background-color:rgb(83, 238, 228);
+      color:white;
+        border:2px groove white;
+        max-width: 60%;
+      max-height: 60%;
+  }
+
+.login-button {
+   margin-top: 1.4%;
 }
 
-.radio-wrapper label::before {
-    content: "";
-    height: 20px;
-    width: 20px;
-    background: rgba(255, 255, 255, 0.75);  
-    border: 1px solid var(--secondary-color);  
-    position: absolute;
-    top: -4px;
-    left: -30px;
-}
-
-.radio-wrapper label::before {
-    border-radius: 50%;
-}
-
-.radio-wrapper label::after {
-    content: "";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--secondary-color);
-    position: absolute;
-    left: -29px;
-    top: -3px;
-    background-image: radial-gradient(circle, #39a6b2, var(--secondary-color));
-}
-
-.radio-wrapper input + label::after {
-    content: none;
-}
-
-.radio-wrapper input:checked + label::after {
-    content: "";
-}
- */
