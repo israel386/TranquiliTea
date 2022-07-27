@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('hompage');
+      document.location.replace('homepage');
     } else {
       alert('Failed to log in.');
     }
@@ -31,10 +31,10 @@ const signupFormHandler = async (event) => {
       method: 'POST',
       body: JSON.stringify({ username, email, password }),
       headers: { 'Content-Type': 'application/json' },
-    });
+    }).then((response) => { console.log(response) });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('homepage');
     } else {
       alert('Failed to sign up.');
     }
