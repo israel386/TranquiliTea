@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   User.findAll({
   })
     .then(dbUserData => {
-      res.render('homepage');
+      res.render('login');
     })
     .catch(err => {
       console.log(err);
