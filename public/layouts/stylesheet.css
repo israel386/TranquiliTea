@@ -1,4 +1,8 @@
-main{
+* {
+    font-family:serif;
+}
+
+main {
 border:25px solid rgb(252, 254, 160);
 }
 
@@ -7,7 +11,7 @@ border:25px solid rgb(252, 254, 160);
 }
 
 
-.container{
+.container {
     padding: 3%;
     background-color: rgb(252, 218, 185);
     opacity: 98%;
@@ -17,10 +21,11 @@ border:25px solid rgb(252, 254, 160);
 body{
     background-image: url("/icons/teabackground.png");
     background-size: cover;
+    background-repeat: repeat;
 }
 .brand{
 font-size: xx-large;
-font-family: serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family: serif;
 }
 .tagline{
     display: flex;
