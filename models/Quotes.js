@@ -17,15 +17,10 @@ Quotes.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+
         by: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-
-        mood: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            defaultValue: 10,
         }
 
     }, 

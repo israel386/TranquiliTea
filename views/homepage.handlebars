@@ -1,0 +1,144 @@
+   <section class= "container">
+<nav>
+  <ul>
+    <li class="brand"><img class="logo" src="/icons/tealogo.png"><strong>TranquliTea</strong></li>
+  </ul>
+</nav>
+<form>
+
+   <div class="tagline"> <p>Choose the emoji that matches your mood closest. Keep a daily log of your selections and subsequent journal entries to track your moods and mental health!</p></div>
+    <div class="content">
+  <div class="radio-toolbar">
+    
+<input type="radio" id="happier" name="val" value="happier"/>
+<label for="happier"><img id="small" class="mood" src="/icons/grinning.png"/></label>
+
+
+<input type="radio" id="happy" name="val" value="happy"/>
+<label for="happy"><img id="small" class="mood" src="/icons/smiling.png"/></label>
+
+<input type="radio" id="bummed" name="val" value="bummed"/>
+<label for="bummed"><img id="small" class="mood" src="/icons/pensive.png"/></label> 
+
+<input type="radio" id="sad"  name="val" value="sad"/>
+<label for="sad"><img id="small" class="mood" src="/icons/sleepy.png"/></label> 
+  </div>
+  <br/><br/><br/><br/>
+  <button type="submit">Confirm Selection</button>
+</div>
+      </form>
+<section class="journal">
+<div class="user-text">Spill the tea! 
+    <input class="user-input" type="text" placeholder= "Type here to let us know how you really feel" /></div>
+    <br/>
+    <button type="submit">Submit</button>
+   </section>
+
+
+{{!-- ///////////////// Charlottes Code ///////////////////
+
+<div> You are on the homepage </div>
+
+
+<ol class="affirmation-box">
+  {{#each affirmations as |affirmation|}}
+  <li>
+    <article class="affirmations">
+      <!-- affirmation --> 
+      <div class="title">
+       {{affirmation_phrase}}  
+        
+      </div>
+      
+    </article>
+  </li>
+  {{/each}}
+</ol>
+
+
+<ol class="quote-box">
+  {{#each quotes}}
+  <li>
+    <article class="quotes">
+      <!-- quotes --> 
+      <div class="title">
+       {{quote}} - by {{by}}
+      </div>
+      
+    </article>
+  </li>
+  {{/each}}
+</ol>
+
+<ol class="teas-box">
+  {{#each teas}}
+  <li>
+    <article class="teas">
+      <!-- teas --> 
+      <div class="title">
+       {{tea_type}} - benefits {{benefits}}
+      </div>
+      
+    </article>
+  </li>
+  {{/each}}
+</ol>
+
+
+
+
+<h2> Create a Entry </h2>
+<form class="entry-form">
+  <div>
+    <textarea name="entry-title"></textarea>
+    <textarea name="entry-text" id="entry-text"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Create The Entry</button>
+    
+
+  </div>
+</form>
+
+<div class="comments">
+  {{#each post.entry}}
+  <section class="comment">
+    <div class="meta">
+
+      Entered on {{created_at}}
+    </div>
+    <div class="text">
+      {{entry_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
+
+ <a href="/entry/{{entry.id}}">{{entry_title}} </a>
+      </div>
+
+
+<h2> Previous Entries </h2>
+
+<div class="entries-box">
+  {{#each entry}} 
+
+    <article class="teas">
+      <!-- entries --> 
+      <div class="title">
+      <h3> {{entry_title}}  </h3> 
+      <p> {{createdAt}} </p>
+      
+     <p> {{entry_text}}  </p> 
+      </div>
+      
+    </article>
+ <button type="submit">edit entry</button>
+    <button type="submit">delete entry</button>
+  {{/each}}
+
+
+</div>
+
+<script src="./javascript/entry.js"></script> --}}

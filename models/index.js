@@ -3,14 +3,12 @@ const Affirmations = require("./Affirmations");
 const Quotes = require("./Quotes");
 const Teas = require("./Teas");
 const Entry = require("./Entry");
-
-//Affirmations belong to mood
-
-//Quotes belong to mood
+const User = require("./User");
 
 module.exports = {
   Affirmations,
   Quotes,
   Teas,
   Entry,
+  User,
 };

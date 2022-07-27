@@ -1,8 +1,9 @@
 const router = require("express").Router();
+const sequelize = require("../config/connection");
 
 // connects the models
 //const sequelize = require("../config/connection");
-const { Affirmations, Quotes, Teas, Entry } = require("../models");
+const { Affirmations, Quotes, Teas, Entry, User } = require("../models");
 
 router.get("/", (req, res) => {
   Affirmations.findAll({
@@ -99,5 +100,28 @@ router.get("/entry/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+// // user
+// router.get('/', (req, res) => {
+//   console.log('======================');
+//   User.findAll({
+//   })
+//     .then(dbUserData => {
+//       res.render('login');
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
+
+// router.get('/login', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
+
+//   res.render('login');
+// });
 
 module.exports = router;
