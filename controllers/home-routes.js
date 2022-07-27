@@ -49,6 +49,32 @@ router.get("/", (req, res) => {
 });
 
 //single entry
+router.get("/entries", (req, res) => {
+  Entry.findAll({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "entry_title", "entry_text", "created_at"],
+  })
+    .then((EntryData) => {
+      if (!EntryData) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+
+      // serialize the data
+      const entry = EntryData.get({ plain: true });
+
+      // pass data to template
+      res.render("entries", { entry });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//single entry
 router.get("/entry/:id", (req, res) => {
   Entry.findOne({
     where: {
@@ -66,7 +92,7 @@ router.get("/entry/:id", (req, res) => {
       const entry = EntryData.get({ plain: true });
 
       // pass data to template
-      res.render("single-entry", { entry });
+      res.render("entry", { entry });
     })
     .catch((err) => {
       console.log(err);

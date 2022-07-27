@@ -2,18 +2,19 @@ async function entryFormHandler(event) {
   event.preventDefault();
 
   const entry_text = document
-    .querySelector('textarea[name="entry-body"]')
+    .querySelector('textarea[name="entry-text"]')
     .value.trim();
 
-  const post_id = window.location.toString().split("/")[
-    window.location.toString().split("/").length - 1
-  ];
+  const entry_title = document
+    .querySelector('textarea[name="entry-title"]')
+    .value.trim();
 
   if (entry_text) {
+    console.log("post fired");
     const response = await fetch("/api/entry", {
-      method: "POST",
+      method: "post",
       body: JSON.stringify({
-        post_id,
+        entry_title,
         entry_text,
       }),
       headers: {
@@ -23,6 +24,7 @@ async function entryFormHandler(event) {
 
     if (response.ok) {
       document.location.reload();
+      console.log("page reloaded");
     } else {
       alert(response.statusText);
     }

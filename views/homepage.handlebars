@@ -47,40 +47,24 @@
 </ol>
 
 
-<div class="entries-box">
-  {{#each entry}} 
-
-    <article class="teas">
-      <!-- entries --> 
-      <div class="title">
-      <h3> {{entry_title}}  </h3> 
-      <p> {{createdAt}} </p>
-      
-     <p> {{entry_text}}  </p> 
-      </div>
-      
-    </article>
- 
-  {{/each}}
-</div>
 
 
-<form class="comment-form">
+<h2> Create a Entry </h2>
+<form class="entry-form">
   <div>
     <textarea name="entry-title"></textarea>
-    <textarea name="entry-text"></textarea>
+    <textarea name="entry-text" id="entry-text"></textarea>
   </div>
 
   <div>
-    <button type="submit">add entry</button>
-    <button type="submit">edit entry</button>
-    <button type="submit">delete entry</button>
+    <button type="submit">Create The Entry</button>
+    
 
   </div>
 </form>
 
 <div class="comments">
-  {{#each post.entries}}
+  {{#each post.entry}}
   <section class="comment">
     <div class="meta">
 
@@ -96,4 +80,27 @@
  <a href="/entry/{{entry.id}}">{{entry_title}} </a>
       </div>
 
-<script src="/public/javascript/entry.js"></script>
+
+<h2> Previous Entries </h2>
+
+<div class="entries-box">
+  {{#each entry}} 
+
+    <article class="teas">
+      <!-- entries --> 
+      <div class="title">
+      <h3> {{entry_title}}  </h3> 
+      <p> {{createdAt}} </p>
+      
+     <p> {{entry_text}}  </p> 
+      </div>
+      
+    </article>
+ <button type="submit">edit entry</button>
+    <button type="submit">delete entry</button>
+  {{/each}}
+
+
+</div>
+
+<script src="./javascript/entry.js"></script>
