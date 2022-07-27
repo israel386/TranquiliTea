@@ -5,7 +5,31 @@ const sequelize = require("../config/connection");
 //const sequelize = require("../config/connection");
 const { Affirmations, Quotes, Teas, Entry, User } = require("../models");
 
-router.get("/", (req, res) => {
+// user
+router.get('/', (req, res) => {
+  console.log('======================');
+  User.findAll({
+  })
+    .then(dbUserData => {
+      res.render('login');
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/homepage');
+    return;
+  }
+
+  res.render('login');
+});
+
+
+router.get("/homepage", (req, res) => {
   Affirmations.findAll({
     attributes: ["id", "affirmation_phrase", "mood"],
   })
@@ -66,9 +90,7 @@ router.get("/entries", (req, res) => {
       // serialize the data
       const entry = EntryData.get({ plain: true });
 
-<<<<<<< HEAD
-  res.render('homepage');
-=======
+      res.render('homepage');
       // pass data to template
       res.render("entries", { entry });
     })
@@ -76,7 +98,6 @@ router.get("/entries", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
->>>>>>> 3c058fb906e51c30079deec08d0129e4107db9a3
 });
 
 //single entry
@@ -104,28 +125,5 @@ router.get("/entry/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-
-// // user
-// router.get('/', (req, res) => {
-//   console.log('======================');
-//   User.findAll({
-//   })
-//     .then(dbUserData => {
-//       res.render('login');
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
-
-// router.get('/login', (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect('/');
-//     return;
-//   }
-
-//   res.render('login');
-// });
 
 module.exports = router;

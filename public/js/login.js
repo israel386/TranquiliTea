@@ -1,4 +1,4 @@
-const loginFormHandler = async (event) => {
+async function loginFormHandler(event) {
   event.preventDefault();
 
   const email = document.querySelector('#email-login').value.trim();
@@ -6,20 +6,23 @@ const loginFormHandler = async (event) => {
 
   if (email && password) {
     const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ email, password }),
-      headers: { 'Content-Type': 'application/json' },
+      method: 'post',
+      body: JSON.stringify({
+        email,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
     });
 
     if (response.ok) {
-      document.location.replace('/login/');
+      document.location.replace('/homepage');
     } else {
-      alert('Failed to log in.');
+      alert(response.statusText);
     }
   }
-};
+}
 
-const signupFormHandler = async (event) => {
+async function signupFormHandler(event) {
   event.preventDefault();
 
   const username = document.querySelector('#username-signup').value.trim();
@@ -28,23 +31,23 @@ const signupFormHandler = async (event) => {
 
   if (username && email && password) {
     const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ username, email, password }),
-      headers: { 'Content-Type': 'application/json' },
-    })
+      method: 'post',
+      body: JSON.stringify({
+        username,
+        email,
+        password
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    });
 
     if (response.ok) {
-      document.location.replace('/login/');
+      document.location.replace('/homepage');
     } else {
-      alert('Failed to sign up.');
+      alert(response.statusText);
     }
   }
-};
+}
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
