@@ -3,14 +3,13 @@ const sequelize = require("../../config/connection");
 const { Entry } = require("../../models");
 
 // get all entries
-router.get("/", (req, res) => {
-  console.log("======================");
-  Entry.findAll({
-    attributes: ["id", "entry_title", "entry_text", "created_at"],
 
+router.get("/", (req, res) => {
+  Entry.findAll({
+    teas: ["id", "entry_title", "entry_text", "created_at"],
     order: [["created_at", "DESC"]],
   })
-    .then((EntryData) => res.json(EntryData))
+    .then((entrydata) => res.json(entrydata))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -27,7 +26,7 @@ router.get("/:id", (req, res) => {
   })
     .then((EntryData) => {
       if (!EntryData) {
-        res.status(404).json({ message: "No post found with this id" });
+        res.status(404).json({ message: "Entry not found" });
         return;
       }
       res.json(EntryData);
