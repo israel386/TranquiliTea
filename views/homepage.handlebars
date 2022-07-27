@@ -1,10 +1,16 @@
-   <form>
+   <section class= "container">
+<nav>
+  <ul>
+    <li class="brand"><img class="logo" src="/icons/tealogo.png"><strong>TranquliTea</strong></li>
+  </ul>
+</nav>
+<form>
 
    <div class="tagline"> <p>Choose the emoji that matches your mood closest</p></div>
     <div class="content">
   <div class="radio-toolbar">
     
-<input type="radio" id="happier" name="val" value="happier" checked/>
+<input type="radio" id="happier" name="val" value="happier"/>
 <label for="happier"><img id="small" class="mood" src="/icons/grinning.png"/></label>
 
 
@@ -17,11 +23,16 @@
 <input type="radio" id="sad"  name="val" value="sad"/>
 <label for="sad"><img id="small" class="mood" src="/icons/sleepy.png"/></label> 
   </div>
+  <br/><br/><br/><br/>
+  <button type="submit">Confirm Selection</button>
 </div>
       </form>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<div class="journal">
-    <input type="text" placeholder= "Tell us how you feel" /></div>
+<section class="journal">
+<div class="user-text">Spill the tea! 
+    <input class="user-input" type="text" placeholder= "Type here to let us know how you really feel" /></div>
+    <br/>
+    <button type="submit">Submit</button>
+   </section>
 {{!-- 
     <label>
     <span class="radio-wrapper">

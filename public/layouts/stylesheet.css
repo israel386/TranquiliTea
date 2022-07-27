@@ -1,3 +1,27 @@
+main{
+border:25px solid rgb(252, 254, 160);
+}
+
+section {
+border:25px solid rgb(252, 254, 160);
+}
+
+
+.container{
+    padding: 3%;
+    background-color: rgb(252, 218, 185);
+    opacity: 98%;
+    border-radius: 20%;
+}
+
+body{
+    background-image: url("/icons/teabackground.png");
+    background-size: cover;
+}
+.brand{
+font-size: xx-large;
+font-family: serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .tagline{
     display: flex;
     justify-content: center;
@@ -5,9 +29,23 @@
 }
 
 .journal{
-    max-width: 25%;
-    display: flex;
+    text-align: center;
+    max-width: 100%;
     justify-content: center;
+    background-color: rgb(252, 218, 185);
+    
+}
+
+.user-text{
+    background-color: rgb(252, 218, 185) ;
+}
+.user-input{
+    background-color:antiquewhite
+}
+.logo{
+    max-width: 25%;
+    max-height: 25%;
+    border-radius: 50%;
 }
 
 .content
@@ -17,9 +55,9 @@
 
 .radio-toolbar
 {
-  background-color:white;
+  background-color:rgb(252, 218, 185);
   width:30vw;
-  padding:50px 30px;
+  /* padding:50px 30px; */
   position:absolute;
   left:50%;
   transform:translateX(-50%);
@@ -32,9 +70,6 @@
   font-size:1.2em;
 }
 
-
-
-
 .radio-toolbar {
     margin: 10px;
     display: flex;
@@ -42,16 +77,11 @@
     justify-content: space-around;
     flex-grow: 2;
   }
-  
-
-
 
   .radio-toolbar input[type="radio"] {
     visibility: hidden;
     display: none;
   }
-
-
   
   .radio-toolbar label {
       display: inline-block;
@@ -74,7 +104,7 @@
   }
   
   .radio-toolbar input[type="radio"]:focus + label {
-      border: 2px dashed rgb(98, 233, 235);
+      border: 2px groove rgb(98, 233, 235);
       max-width: 60%;
       max-height: 60%;
   }
@@ -82,39 +112,13 @@
   .radio-toolbar input[type="radio"]:checked + label {
       background-color:rgb(83, 238, 228);
       color:white;
-        border:2px dashed white;
+        border:2px groove white;
         max-width: 60%;
       max-height: 60%;
   }
 
-.login-form {
-    <form>
-
-  <!-- Grid -->
-  <div class="grid">
-
-    <!-- Markup example 1: input is inside label -->
-    <label for="firstname">
-      First name
-      <input type="text" id="firstname" name="firstname" placeholder="First name" required>
-    </label>
-
-    <label for="lastname">
-      Last name
-      <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
-    </label>
-
-  </div>
-
-  <!-- Markup example 2: input is after label -->
-  <label for="email">Email address</label>
-  <input type="email" id="email" name="email" placeholder="Email address" required>
-  <small>We will never share your email with anyone else.</small>
-
-  <!-- Button -->
-  <button type="submit">Submit</button>
-
-</form>
+.login-button {
+   margin-top: 1.4%;
 }
   /* body {
 background-image: linear-gradient(rgb(20, 202, 202), azure);
