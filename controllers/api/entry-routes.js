@@ -1,11 +1,14 @@
 const router = require("express").Router();
-const sequelize = require("../../config/connection");
 const { Entry } = require("../../models");
+const withAuth = require('../../utils/auth');
 
 // get all entries
 
 router.get("/", (req, res) => {
   Entry.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
     teas: ["id", "entry_title", "entry_text", "created_at"],
     order: [["created_at", "DESC"]],
   })
@@ -38,10 +41,11 @@ router.get("/:id", (req, res) => {
 });
 
 //create an entry
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Entry.create({
     entry_title: req.body.entry_title,
     entry_text: req.body.entry_text,
+    user_id: req.session.user_id
   })
     .then((EntryData) => res.json(EntryData))
     .catch((err) => {

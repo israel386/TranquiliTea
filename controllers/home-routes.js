@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
+const withAuth = require('../utils/auth');
 
 // connects the models
 //const sequelize = require("../config/connection");
@@ -29,7 +30,7 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get("/homepage", (req, res) => {
+router.get("/homepage", withAuth, (req, res) => {
   Affirmations.findAll({
     attributes: ["id", "affirmation_phrase", "mood"],
   })
@@ -54,6 +55,9 @@ router.get("/homepage", (req, res) => {
 
           //entries
           Entry.findAll({
+            where: {
+              user_id: req.session.user_id
+            },
             attributes: ["entry_title", "entry_text", "created_at"],
           }).then((EntriesData) => {
             // pass a single post object into the homepage template
@@ -74,7 +78,7 @@ router.get("/homepage", (req, res) => {
 });
 
 //single entry
-router.get("/entries", (req, res) => {
+router.get("/entries", withAuth, (req, res) => {
   Entry.findAll({
     where: {
       id: req.params.id,
@@ -101,7 +105,7 @@ router.get("/entries", (req, res) => {
 });
 
 //single entry
-router.get("/entry/:id", (req, res) => {
+router.get("/entry/:id", withAuth, (req, res) => {
   Entry.findOne({
     where: {
       id: req.params.id,
