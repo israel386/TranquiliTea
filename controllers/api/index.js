@@ -9,6 +9,6 @@ router.use("/affirmations", affirmationsRoutes);
 router.use("/quotes", quotesRoutes);
 router.use("/teas", teasRoutes);
 router.use("/entry", entryRoutes);
-router.use("/user", userRouted);
+router.use("/users", userRouted);
 
 module.exports = router;
