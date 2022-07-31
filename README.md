@@ -29,7 +29,7 @@ To provide an easy to use mental health symptom tracker and mood monitor to help
 
 <br>
 
-## Phillip: (NAME) CSS 
+## Phillip: PICO CSS 
 
 
 <br>
