@@ -1,11 +1,36 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
+const withAuth = require('../utils/auth');
 
 // connects the models
 //const sequelize = require("../config/connection");
 const { Affirmations, Quotes, Teas, Entry, User } = require("../models");
 
-router.get("/", (req, res) => {
+// user
+router.get('/', (req, res) => {
+  console.log('======================');
+  User.findAll({
+  })
+    .then(dbUserData => {
+      res.render('login');
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/homepage');
+    return;
+  }
+
+  res.render('login');
+});
+
+
+router.get("/homepage", withAuth, (req, res) => {
   Affirmations.findAll({
     attributes: ["id", "affirmation_phrase", "mood"],
   })
@@ -30,6 +55,9 @@ router.get("/", (req, res) => {
 
           //entries
           Entry.findAll({
+            where: {
+              user_id: req.session.user_id
+            },
             attributes: ["entry_title", "entry_text", "created_at"],
           }).then((EntriesData) => {
             // pass a single post object into the homepage template
@@ -50,7 +78,7 @@ router.get("/", (req, res) => {
 });
 
 //single entry
-router.get("/entries", (req, res) => {
+router.get("/entries", withAuth, (req, res) => {
   Entry.findAll({
     where: {
       id: req.params.id,
@@ -66,6 +94,7 @@ router.get("/entries", (req, res) => {
       // serialize the data
       const entry = EntryData.get({ plain: true });
 
+      res.render('homepage');
       // pass data to template
       res.render("entries", { entry });
     })
@@ -76,7 +105,7 @@ router.get("/entries", (req, res) => {
 });
 
 //single entry
-router.get("/entry/:id", (req, res) => {
+router.get("/entry/:id", withAuth, (req, res) => {
   Entry.findOne({
     where: {
       id: req.params.id,
@@ -101,6 +130,7 @@ router.get("/entry/:id", (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 // user
 router.get('/', (req, res) => {
   console.log('======================');
@@ -124,4 +154,6 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+=======
+>>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
 module.exports = router;
