@@ -23,4 +23,4 @@ https://frozen-fjord-79958.herokuapp.com/
 
 ##Contributors
 
-Made with ❤️ byt Israel de la Rosa, Charlotte Ri'Chard, Philip Gelin, and Caleb Kester.
+Made with ❤️ byt Israel De La Rosa, Charlotte Ri'Chard, Philip Gelin, and Caleb Kester.
