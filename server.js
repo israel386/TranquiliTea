@@ -24,15 +24,18 @@ app.use(session(sess));
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
-
-//connecting the public files (html and css)
-app.use(express.static(path.join(__dirname, "public")));
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(require('./controllers/'));
+//connecting the public files (html and css)
+
 app.use(routes);
 // sync sequelize models to the database, then turn on the server
-
+// app.listen(PORT, () => {
+//   console.log(`App listening on port ${PORT}!`);
+//   sequelize.sync({ force: false });
+// });
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
