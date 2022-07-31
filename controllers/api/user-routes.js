@@ -14,13 +14,8 @@ router.get("/", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-router.post('/', (req, res) => {
-
-=======
 router.post("/", (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
   User.create({
     username: req.body.username,
     email: req.body.email,
@@ -41,14 +36,9 @@ router.post("/", (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-router.post('/login', (req, res) => {
-
-=======
 router.post("/login", (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   console.log("TEST");
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
   User.findOne({
     where: {
       email: req.body.email,
@@ -56,22 +46,14 @@ router.post("/login", (req, res) => {
   }).then((dbUserData) => {
     console.log(dbUserData);
     if (!dbUserData) {
-<<<<<<< HEAD
-      res.status(400).json({ message: 'User information not valid' });
-=======
       res.status(400).json({ message: "No user with that email address!" });
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
       return;
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-<<<<<<< HEAD
-      res.status(400).json({ message: 'User information not valid!' });
-=======
       res.status(400).json({ message: "Incorrect password!" });
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
       return;
     }
 
@@ -107,11 +89,7 @@ router.put("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-<<<<<<< HEAD
-        res.status(404).json({ message: 'User information not valid' });
-=======
         res.status(404).json({ message: "No user found with this id" });
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
         return;
       }
       res.json(dbUserData);
@@ -130,11 +108,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-<<<<<<< HEAD
-        res.status(404).json({ message: 'User information not valid' });
-=======
         res.status(404).json({ message: "No user found with this id" });
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
         return;
       }
       res.json(dbUserData);

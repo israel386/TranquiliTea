@@ -1,281 +1,133 @@
-<section class= "container">
-<nav>
- <ul>
-   <li class="brand"><img class="logo" src="/icons/tealogo.png"><strong>TranquliTea</strong></li>
- </ul>
-</nav>
-<form>
- 
-  <div class="tagline"> <p>Choose the emoji that matches your mood closest. Keep a daily log of your selections and subsequent journal entries to track your moods and mental health!</p></div>
-   <div class="content">
- <div class="radio-toolbar">
-  
-<input type="radio" id="happier" name="val" value="happier"/>
-<label for="happier" class="affirmationBtn1 quoteBtn1 teaBtn1"><img id="small" class="mood" src="/icons/grinning.png"/></label>
- 
- 
-<input type="radio" id="happy" name="val" value="happy"/>
-<label for="happy" class="affirmationBtn2 quoteBtn2 teaBtn2"><img id="small" class="mood" src="/icons/smiling.png"/></label>
- 
- 
-<input type="radio" id="bummed" name="val" value="bummed"/>
-<label for="bummed" class="affirmationBtn3 quoteBtn3 teaBtn3"><img id="small" class="mood" src="/icons/pensive.png"/></label>
- 
-<input type="radio" id="sad"  name="val" value="sad"/>
-<label for="sad" class="affirmationBtn4 quoteBtn4 teaBtn4"><img id="small" class="mood" src="/icons/sleepy.png"/></label>
- </div>
- <br/><br/><br/><br/>
-{{!-- AFFIRMATIONS --}}
-<section>
-  
-<h1 align="center"> Affirmations </h1>
- 
-<div class="affirmation" id="affirmation" >
- 
-   {{affirmation_phrase}}
- 
-</div>
- 
-{{!-- <button type="submit" class="affirmationBtn"> Generate a new Affirmation </button> --}}
- 
-</section>
- 
-{{!-- QUOTES --}}
-<section>
-<h1 align="center"> Quotes </h1>
- 
-<div class="quote" id="quote"> {{quote}} </div>
- 
-<p class="by" id="by"> {{by}} </p>
-</section>
- 
- 
-{{!-- TEAS --}}
-<section>
-<h1 align="center"> Teas </h1>
- 
-<div class="tea" id="tea"> {{tea_type}} </div>
- 
-<p class="benefits" id="benefits">  {{benefits}} </p>
- 
- 
-</section>
- 
-</div>
-     </form>
-<section class="journal">
-<h2 align="center"> Spill the Tea </h2>
-<<<<<<< HEAD
-=======
-<form class="entry-form">
-  <div>
-    <textarea name="entry-title"></textarea>
-    <textarea name="entry-text" id="entry-text"></textarea>
-  </div>
+<section class="container">
+  <nav>
+    <ul>
+      <li class="brand"><img class="logo" src="/icons/tealogo.png"><strong>TranquliTea</strong></li>
+    </ul>
+  </nav>
+  <form>
 
-  <div>
-    <button type="submit">Create The Entry</button>
-    
-
-  </div>
-</form>
-
-<div class="comments">
-  {{#each post.entry}}
-  <section class="comment">
-    <div class="meta">
-
-      Entered on {{created_at}}
+    <div class="tagline">
+      <p>Choose the emoji that matches your mood closest. Keep a daily log of your selections and subsequent journal
+        entries to track your moods and mental health!</p>
     </div>
-    <div class="text">
-      {{entry_text}}
+    <div class="content">
+      <div class="radio-toolbar">
+
+        <input type="radio" id="happier" name="val" value="happier" />
+        <label for="happier" class="affirmationBtn1 quoteBtn1 teaBtn1"><img id="small" class="mood"
+            src="/icons/grinning.png" /></label>
+
+
+        <input type="radio" id="happy" name="val" value="happy" />
+        <label for="happy" class="affirmationBtn2 quoteBtn2 teaBtn2"><img id="small" class="mood"
+            src="/icons/smiling.png" /></label>
+
+
+        <input type="radio" id="bummed" name="val" value="bummed" />
+        <label for="bummed" class="affirmationBtn3 quoteBtn3 teaBtn3"><img id="small" class="mood"
+            src="/icons/pensive.png" /></label>
+
+        <input type="radio" id="sad" name="val" value="sad" />
+        <label for="sad" class="affirmationBtn4 quoteBtn4 teaBtn4"><img id="small" class="mood"
+            src="/icons/sleepy.png" /></label>
+      </div>
+      <br /><br /><br /><br />
+      {{!-- AFFIRMATIONS --}}
+      <section>
+
+        <h1 align="center"> Affirmations </h1>
+
+        <div class="affirmation" id="affirmation">
+
+          {{affirmation_phrase}}
+
+        </div>
+
+        {{!-- <button type="submit" class="affirmationBtn"> Generate a new Affirmation </button> --}}
+
+      </section>
+
+      {{!-- QUOTES --}}
+      <section>
+        <h1 align="center"> Quotes </h1>
+
+        <div class="quote" id="quote"> {{quote}} </div>
+
+        <p class="by" id="by"> {{by}} </p>
+      </section>
+
+
+      {{!-- TEAS --}}
+      <section>
+        <h1 align="center"> Teas </h1>
+
+        <div class="tea" id="tea"> {{tea_type}} </div>
+
+        <p class="benefits" id="benefits"> {{benefits}} </p>
+
+
+      </section>
+
+    </div>
+  </form>
+  <section class="journal">
+    <h2 align="center"> Spill the Tea </h2>
+    <form class="entry-form">
+      <div>
+        <textarea name="entry-title"></textarea>
+        <textarea name="entry-text" id="entry-text"></textarea>
+      </div>
+
+      <div>
+        <button type="submit">Create The Entry</button>
+
+
+      </div>
+    </form>
+
+    <div>
+      {{#each post.entry}}
+      <section>
+        <div class="meta">
+
+          Entered on {{created_at}}
+        </div>
+        <div class="text">
+          {{entry_text}}
+        </div>
+      </section>
+      {{/each}}
+    </div>
+
+    <a href="/entry/{{entry.id}}">{{entry_title}} </a>
+    </div>
+
+
+    <h2 align="center"> Previous Entries </h2>
+
+    <div class="entries-box">
+      {{#each entry}}
+
+      <article class="teas">
+        <!-- entries -->
+        <div class="title">
+          <h3> {{entry_title}} </h3>
+          <p> {{createdAt}} </p>
+
+          <p> {{entry_text}} </p>
+        </div>
+
+      </article>
+      {{/each}}
+
+
     </div>
   </section>
-  {{/each}}
-</div>
-
- <a href="/entry/{{entry.id}}">{{entry_title}} </a>
-      </div>
-
-
-<h2 align="center"> Previous Entries </h2>
-
-<div class="entries-box">
-  {{#each entry}} 
-
-    <article class="teas">
-      <!-- entries --> 
-      <div class="title">
-      <h3> {{entry_title}}  </h3> 
-      <p> {{createdAt}} </p>
-      
-     <p> {{entry_text}}  </p> 
-      </div>
-      
-    </article>
- <button type="submit">edit entry</button>
-    <button type="submit">delete entry</button>
-  {{/each}}
-
-
-</div>
-</section>
 
 
 
 
-{{!-- <div class="user-text">Spill the tea! 
-    <input class="user-input" type="text" placeholder= "Type here to let us know how you really feel" /></div>
-    <br/>
-    <button type="submit">Submit</button>
-   </section>
 
 
-///////////////// Charlottes Code ///////////////////
-
-<div> You are on the homepage </div> --}}
-
-{{!-- 
-<ol class="affirmation-box">
-  {{#each affirmations as |affirmation|}}
-  <li>
-    <article class="affirmations">
-      <!-- affirmation --> 
-      <div class="title">
-       {{affirmation_phrase}}  
-        
-      </div>
-      
-    </article>
-  </li>
-  {{/each}}
-</ol> --}}
-
-
-{{!-- <ol class="quote-box">
-  {{#each quotes}}
-  <li>
-    <article class="quotes">
-      <!-- quotes --> 
-      <div class="title">
-       {{quote}} - by {{by}}
-      </div>
-      
-    </article>
-  </li>
-  {{/each}}
-</ol> --}}
-
-{{!-- <ol class="teas-box">
-  {{#each teas}}
-  <li>
-    <article class="teas">
-      <!-- teas --> 
-      <div class="title">
-       {{tea_type}} - benefits {{benefits}}
-      </div>
-      
-    </article>
-  </li>
-  {{/each}}
-</ol> --}}
-
-
-
-
-{{!-- <h2 align="center"> Spill the Tea </h2>
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
-<form class="entry-form">
- <div>
-   <textarea name="entry-title"></textarea>
-   <textarea name="entry-text" id="entry-text"></textarea>
- </div>
- 
- <div>
-   <button type="submit">Create The Entry</button>
-  
- 
- </div>
-</form>
- 
-<div class="comments">
- {{#each post.entry}}
- <section class="comment">
-   <div class="meta">
- 
-     Entered on {{created_at}}
-   </div>
-   <div class="text">
-     {{entry_text}}
-   </div>
- </section>
- {{/each}}
-</div>
-<<<<<<< HEAD
- 
-<a href="/entry/{{entry.id}}">{{entry_title}} </a>
-     </div>
- 
- 
-<h2 align="center"> Previous Entries </h2>
- 
-<div class="entries-box">
- {{#each entry}}
- 
-   <article class="teas">
-     <!-- entries -->
-     <div class="title">
-     <h3> {{entry_title}}  </h3>
-     <p> {{createdAt}} </p>
-    
-    <p> {{entry_text}}  </p>
-     </div>
-    
-   </article>
-<button type="submit">edit entry</button>
-   <button type="submit">delete entry</button>
- {{/each}}
- 
- 
-</div>
-</section>
- 
- 
- 
- 
- 
- 
-<script src="./javascript/entry.js"></script>
-<script src="./javascript/bot.js"></script>
-=======
-
- <a href="/entry/{{entry.id}}">{{entry_title}} </a>
-      </div>
-
-
-<h2 align="center"> Previous Entries </h2>
-
-<div class="entries-box">
-  {{#each entry}} 
-
-    <article class="teas">
-      <!-- entries --> 
-      <div class="title">
-      <h3> {{entry_title}}  </h3> 
-      <p> {{createdAt}} </p>
-      
-     <p> {{entry_text}}  </p> 
-      </div>
-      
-    </article>
- <button type="submit">edit entry</button>
-    <button type="submit">delete entry</button>
-  {{/each}}
-
-
-</div> --}}
-
-{{!-- CONNECTS THE ENTRIES DATA  --}}
-
-<script src="./javascript/entry.js"></script>
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
+  <script src="./javascript/entry.js"></script>
+  <script src="./javascript/bot.js"></script>

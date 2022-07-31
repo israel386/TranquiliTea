@@ -130,30 +130,4 @@ router.get("/entry/:id", withAuth, (req, res) => {
     });
 });
 
-<<<<<<< HEAD
-// user
-router.get('/', (req, res) => {
-  console.log('======================');
-  User.findAll({
-  })
-    .then(dbUserData => {
-      res.render('login');
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('login');
-});
-
-=======
->>>>>>> 7a912de0a7f991f4a4fadb647e3060a855679268
 module.exports = router;
