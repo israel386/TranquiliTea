@@ -3,35 +3,35 @@ const { Teas } = require("../models");
 const TeasData = [
       {
         tea_type: "Yerba Green tea",
-        benefits: "energy boost & staying focused ",
+        benefits: "BENEFITS: energy boost & staying focused ",
       },
       {
         tea_type: "Valerian tea",
-        benefits: "calms your mind and nerves",
+        benefits: "BENEFITS: calms your mind and nerves",
       },
       {
         tea_type: "Ginger tea",
-        benefits: "Helps relax the mind and body",
+        benefits: "BENEFITS: helps relax the mind and body",
       },
       {
         tea_type: "Lemongrass tea",
-        benefits: "reduces anxiety and stress levels",
+        benefits: "BENEFITS: reduces anxiety and stress levels",
       },
       {
         tea_type: "Rooibos tea",
-        benefits: "mood boosting tea that also helps lower stress levels",
+        benefits: "BENEFITS: mood boosting tea that also helps lower stress levels",
       },
       {
         tea_type: "Turmeric tea",
-        benefits: "increases the production of dopamine and serotonin levels",
+        benefits: "BENEFITS: increases the production of dopamine and serotonin levels",
       },
       {
         tea_type: "Chamomile tea",
-        benefits: "reduces stress levels and helps induce sleep",
+        benefits: "BENEFITS: reduces stress levels and helps induce sleep",
       },
       {
         tea_type: "Pepermint tea",
-        benefits: "reduces stress levels",
+        benefits: "BENEFITS: reduces stress levels",
       },
 ];
 
