@@ -11,7 +11,7 @@ mindful of their mental health.
 
 https://frozen-fjord-79958.herokuapp.com/
 
-![Screencapture of TranquiliTea.](/public/icons/Screen Shot Login.png)
+![Screencapture of TranquiliTea.](/icons/Screen Shot Login.png)
 
 ## Technolgies Used
 
