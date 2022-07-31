@@ -9,16 +9,16 @@ To provide an easy to use mental health symptom tracker and mood monitor to help
 - [x] Uses Handlebars.js as the templating engine.
 - [x] Uses MySQL and the Sequelize ORM for the database.
 - [x] Have both GET and POST routes for retrieving and adding new data.
-- [ ] Be deployed using Heroku (with data).
+- [x] Be deployed using Heroku (with data).
 - [x] Use at least one new library, package, or technology that we haven’t discussed.
 - [x] Have a polished UI.
 - [x] Be responsive.
 - [x] Be interactive (i.e., accept and respond to user input).
-- [ ] Have a folder structure that meets the MVC paradigm.
+- [x] Have a folder structure that meets the MVC paradigm.
 - [x] Include authentication (express-session and cookies).
 - [x] Protect API keys and sensitive information with environment variables.
-- [ ] Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-- [ ] Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+- [x] Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+- [x] Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 
 
